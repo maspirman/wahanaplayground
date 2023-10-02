@@ -1,0 +1,16 @@
+/* CSS Custom 
+-- DavzBlues Dev--
+*/ 
+
+.section{
+    padding: 0px 0px 0px 0px !important;
+    background-color: white;
+}
+
+
+.sub-menu-container{
+    background-color: none !important; 
+}
+.owl-carousel .owl-item img{
+    max-height: 768px;
+}

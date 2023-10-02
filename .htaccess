@@ -1,0 +1,58 @@
+RewriteEngine On
+
+Rewriterule ^admin$               admin/index.php?p=$1
+
+Rewriterule ^(\w+)?$                  index.php?p=$1
+Rewriterule ^(\w+-\w+)?$              index.php?p=$1
+Rewriterule ^(\w+-\w+-\w+)?$          index.php?p=$1
+Rewriterule ^(\w+-\w+-\w+-\w+)?$      index.php?p=$1
+Rewriterule ^(\w+-\w+-\w+-\w+-\w+)?$  index.php?p=$1
+
+Rewriterule ^en/(\w+)?$                  en/index.php?p=$1
+Rewriterule ^en/(\w+-\w+)?$              en/index.php?p=$1
+Rewriterule ^en/(\w+-\w+-\w+)?$          en/index.php?p=$1
+Rewriterule ^en/(\w+-\w+-\w+-\w+)?$      en/index.php?p=$1
+Rewriterule ^en/(\w+-\w+-\w+-\w+-\w+)?$  en/index.php?p=$1
+
+Rewriterule ^en/produk/(\w+)?$                  en/index.php?p=produk&d=$1
+Rewriterule ^en/produk/(\w+-\w+)?$              en/index.php?p=produk&d=$1
+Rewriterule ^en/produk/(\w+-\w+-\w+)?$          en/index.php?p=produk&d=$1
+Rewriterule ^en/produk/(\w+-\w+-\w+-\w+)?$      en/index.php?p=produk&d=$1
+Rewriterule ^en/produk/(\w+-\w+-\w+-\w+-\w+)?$  en/index.php?p=produk&d=$1
+
+Rewriterule ^news/(\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+Rewriterule ^news/(\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+-\w+)?$  index.php?p=news-pages&n=$1
+
+RewriteRule ^produk/(\w+)?$             index.php?p=produk&d=$1
+RewriteRule ^produk/(\w+-\w+)?$             index.php?p=produk&d=$1
+RewriteRule ^produk/(\w+-\w+-\w+)?$             index.php?p=produk&d=$1
+RewriteRule ^produk/(\w+-\w+-\w+-\w+)?$             index.php?p=produk&d=$1
+RewriteRule ^produk/(\w+-\w+-\w+-\w+-\w+)?$             index.php?p=produk&d=$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{DOCUMENT_ROOT}/$1 -f
+RewriteRule ^[^/]+/([^.]+\.(?:js|css|jpe?g|png|gif|ico))$ /$1 [L,R=301,NC]
+RewriteRule ^index.php/([a-zA-Z0-9/_]+)$ index.php?p=$1
+
+
+RewriteEngine On 
+RewriteCond %{HTTP} on
+RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
